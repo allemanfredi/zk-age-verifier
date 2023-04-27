@@ -1,0 +1,61 @@
+{
+  "name": "zk-age-verifier",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "lint": "eslint .",
+    "compile": "npx hardhat compile",
+    "contracts:lint-and-format": "prettier --write \"./contracts/**/*.+(sol)\" && solhint ./contracts --fix",
+    "test": "npx hardhat test",
+    "compile:circuits": "node scripts/compile-circuits.js age_verifier",
+    "compile:pks": "node scripts/compile-circuits-plonk.js",
+    "format": "prettier --config ./.prettierrc --write \"./**/*.+(js|json)\""
+  },
+  "author": "allemanfredi",
+  "license": "ISC",
+  "devDependencies": {
+    "@nomicfoundation/hardhat-chai-matchers": "1.0.4",
+    "@nomicfoundation/hardhat-network-helpers": "^1.0.6",
+    "@nomicfoundation/hardhat-toolbox": "^2.0.2",
+    "@nomiclabs/hardhat-ethers": "^2.2.1",
+    "@nomiclabs/hardhat-etherscan": "3.1.6",
+    "@nomiclabs/hardhat-web3": "2.0.0",
+    "@openzeppelin/contracts": "^4.7.3",
+    "@openzeppelin/contracts-upgradeable": "4.7.3",
+    "@openzeppelin/hardhat-upgrades": "1.22.1",
+    "@openzeppelin/upgrades-core": "^1.24.1",
+    "circomlib": "^2.0.5",
+    "dotenv": "^8.2.0",
+    "download": "^8.0.0",
+    "ethers": "^5.7.2",
+    "hardhat": "^2.13.0",
+    "hardhat-gas-reporter": "1.0.9",
+    "hardhat-log-remover": "^2.0.2",
+    "hardhat-spdx-license-identifier": "^2.1.0",
+    "prettier": "^2.8.8",
+    "prettier-plugin-solidity": "^1.0.0-beta.5",
+    "rimraf": "^5.0.0",
+    "snarkjs": "^0.6.10",
+    "solhint": "^3.3.6",
+    "solidity-coverage": "^0.8.2"
+  },
+  "config": {
+    "solidity": {
+      "version": "0.8.17"
+    },
+    "paths": {
+      "contracts": "./contracts",
+      "circuit": "./circuit",
+      "tests": "./test",
+      "cache": "./cache",
+      "build": {
+        "snark": "./build/snark",
+        "contracts": "./build/contracts"
+      }
+    },
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  }
+}
