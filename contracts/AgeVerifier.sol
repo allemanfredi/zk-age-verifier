@@ -5,7 +5,7 @@ import {IVerifier} from "./interfaces/IVerifier.sol";
 error NotOfAge();
 
 contract AgeVerifier {
-    address public verifier;
+    address public immutable verifier;
 
     event AgeVerified(address user);
 
